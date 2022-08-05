@@ -86,13 +86,20 @@
 - What's the difference between an immutable and mutable object? How would you create an immutable object?
     - A mutable object is an object whose state can be modified after it's created.
     - A inmmutable is the obj whose state cannot be modified.
-
-
+    ```javascript
+        const inmutableCoutry = Object.freeze(country);
+    ```
 
 - What does `Object.seal()` and `Object.freeze()` do? What are the differences?
+
+    ``Object.freeze()`` don't let modified/create/delete properties in the selected object.
+    ``Object.seal``  prevent from deletion of existing properties but they can be changed.
+
 - What is the `ES6 Map`? What's the difference between this and a normal object?
 - What is a shallow copy and a deep copy in JS? Write a function called `deepClone` that does a deepCopy in JS. And write some tests to check that it works.
 - How would you check that a property exists inside an object?
+
+    
 - What is a Proxy in JS? When whould we use it?
 - How would you extract all the property names of an object? And the values? What about both?
 - How do check that an object is an object in JS? How could you test that an object is and object AND not `null`? Why is this important to check?

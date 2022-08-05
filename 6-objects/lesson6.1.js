@@ -49,7 +49,22 @@ const book = {
     hardTape: false
 }
 const { title, pages = 100, hardTape } = book;
-console.log(title);
-console.log(pages);
+// console.log(title);
+// console.log(pages);
 const { title: titleName, pages: numPages = 100, hardTape: frontPage } = book;
-console.log(titleName);
+// console.log(titleName);
+
+
+// Mutable and Inmutables objects
+const screen = {
+    width: 720,
+    height: 460
+}
+
+// const inmutableScreen = Object.freeze(screen);
+// const inmutableScreen = Object.seal(screen);
+//inmutableScreen.width = 100;
+delete screen.height;
+screen.resolution = 2000;
+
+console.log(screen);
