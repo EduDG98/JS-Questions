@@ -61,10 +61,20 @@ const screen = {
     height: 460
 }
 
-// const inmutableScreen = Object.freeze(screen);
-// const inmutableScreen = Object.seal(screen);
-//inmutableScreen.width = 100;
+const inmutableScreen = Object.freeze(screen);
+const inmutableScreen2 = Object.seal(screen);
+inmutableScreen.width = 100;
+inmutableScreen2.width = 500;
 delete screen.height;
 screen.resolution = 2000;
+//console.log(screen);
 
-console.log(screen);
+
+// Has a propertry?
+const pheline = {
+    tail: true,
+    color: 'black',
+    legs: 4
+}
+
+console.log('Is a tail in pheline', 'pheline' in pheline);

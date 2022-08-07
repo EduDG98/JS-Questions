@@ -97,8 +97,17 @@
 
 - What is the `ES6 Map`? What's the difference between this and a normal object?
 - What is a shallow copy and a deep copy in JS? Write a function called `deepClone` that does a deepCopy in JS. And write some tests to check that it works.
-- How would you check that a property exists inside an object?
 
+- How would you check that a property exists inside an object?
+    There are two ways:
+    1. With ``in``
+    ```javascript
+    name in country;                    //Return true or false
+    ```
+    2. ``hasOwnPropetry`` method
+    ```javascript
+    country.hasOwnPropertry(name);      //Return true or false
+    ```
     
 - What is a Proxy in JS? When whould we use it?
 - How would you extract all the property names of an object? And the values? What about both?
