@@ -1,5 +1,4 @@
 # Objects
-
 - What are the different ways of creating an object in JS? (four types)
     1. ``Objects Literals / Initializer:`` separate the each  `` name: value ``  with comma`.
     ```javascript
@@ -38,8 +37,10 @@
     }
     ```
 
+
 - What's the preffered way to create an object?
     With Objects Literals / Initializer.
+
 
 - What are the different ways to access an object property?
 
@@ -49,6 +50,7 @@
         const rentPricePounds = house['rent'];              //500
     ```
 
+
 - In JavaScript everything is a object. Knowing this, how would you check that an object is an array?
 
     With the array method ``.isArray(...)``
@@ -57,6 +59,8 @@
     const result = Array.isArray(colors);
     console.log(result);
     ```
+
+
 - How do you destructure an object?
 
     ```javascript
@@ -68,6 +72,8 @@
 
     const { id , nick, level = 0} = user;
     ```
+
+
 - How would you clone an object?
     1. With ``spread operators``:
     ```javascript
@@ -83,6 +89,7 @@
     ```
     The ``{}`` is usedto not mutate the original object
 
+
 - What's the difference between an immutable and mutable object? How would you create an immutable object?
     - A mutable object is an object whose state can be modified after it's created.
     - A inmmutable is the obj whose state cannot be modified.
@@ -90,13 +97,28 @@
         const inmutableCoutry = Object.freeze(country);
     ```
 
+
 - What does `Object.seal()` and `Object.freeze()` do? What are the differences?
 
     ``Object.freeze()`` don't let modified/create/delete properties in the selected object.
     ``Object.seal``  prevent from deletion of existing properties but they can be changed.
+See lessons6.1.1-OBJ.js
 
 - What is the `ES6 Map`? What's the difference between this and a normal object?
+
+The ``Map`` is an object which contain key-value. This keys can be any type of JS Object (not as an Object that can only be Strings). To know the size it can be used the method ``size`` (A for-in in a JS Object).
+```javascript
+const weather = new Map([
+                    ['key', 'value'], 
+                    ['key', 'value']
+])
+```
+See lessons6.1.2-MAP.js
+
+
 - What is a shallow copy and a deep copy in JS? Write a function called `deepClone` that does a deepCopy in JS. And write some tests to check that it works.
+
+A shallow copy of an object is a copy whose propertries share same reference. If the copy it's modified also it's modified the source object.
 
 - How would you check that a property exists inside an object?
     There are two ways:
