@@ -13,7 +13,7 @@
     splice(start, deleteCount, item1)
     splice(start, deleteCount, item1, item2, itemN)
     ```
-
+---
 - How do you check that a string contains a substring?
 
     includes(): The method check if a string contains a sequence of characters.

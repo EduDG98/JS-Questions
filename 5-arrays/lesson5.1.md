@@ -17,11 +17,11 @@
     colors.push('orange')       //['blue', 'red', 'green', 'orange']
     ```
 
-
+---
 - What possible types can have an array? Can you mix them?
 
     Arrays can have any types. Yes we can mix them.
-
+---
 - Explain the following array methods: [ join(), pop(), push(), shift(), unshift(), concat(), map(), filter(), reduce(), every(), some(), indexOf(), lastIndexOf(), find(), findIndex(), includes() ]
 
     ``join``: to join all the elments inside an arrays.
@@ -56,7 +56,7 @@
 
     ``includes``: return true if the element exist in the array.
 
-
+---
 - What's the spread syntax? And the rest syntax? What are their differences?
 
     ``spread syntax``: Is just three dots ``...``, it can be used on array and represents all the elements of the array (Do not confuse with the array as calling it by the name).
@@ -71,7 +71,7 @@
     const numberFoo = (num1, num2, num3, ...numArray) => {...};
     numberFoo(1,2,3,...digitsArray);       // The same to write: numberFoo(1,2,3,4,5,6)
     ```
-
+---
 - What it means to destructure an array? How would you do it?
 
     It is a way to extract multiple values from and array and put them in differents variables.
@@ -87,7 +87,7 @@
     ```javascript
     const [car1, car2, car3, car4] = ['Polo', 'Golf', 'Fiesta', 'Corsa'];
     ```
-
+---
 - When you destructure an array and/or an object, how would you assign default values to those?
     
     ```javascript
@@ -99,11 +99,11 @@
 
     const { id , nick, level = 0} = user;
     ```  
-
+---
 - What's the difference between `forEach` and `map`?
 
     The main difference is map can chain  other methods while forEach cannot.
-
+---
 - What is a regular expression in JS? How would you test a string contains the letter `A` with regex?
 
     Are pattern used to match character combinations in strings
