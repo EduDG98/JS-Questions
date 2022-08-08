@@ -37,11 +37,12 @@
     }
     ```
 
-
+---
 - What's the preffered way to create an object?
+
     With Objects Literals / Initializer.
 
-
+---
 - What are the different ways to access an object property?
 
     With dots and with brackets:
@@ -50,7 +51,7 @@
         const rentPricePounds = house['rent'];              //500
     ```
 
-
+---
 - In JavaScript everything is a object. Knowing this, how would you check that an object is an array?
 
     With the array method ``.isArray(...)``
@@ -60,7 +61,7 @@
     console.log(result);
     ```
 
-
+---
 - How do you destructure an object?
 
     ```javascript
@@ -73,7 +74,7 @@
     const { id , nick, level = 0} = user;
     ```
 
-
+---
 - How would you clone an object?
     1. With ``spread operators``:
     ```javascript
@@ -89,7 +90,7 @@
     ```
     The ``{}`` is usedto not mutate the original object
 
-
+---
 - What's the difference between an immutable and mutable object? How would you create an immutable object?
     - A mutable object is an object whose state can be modified after it's created.
     - A inmmutable is the obj whose state cannot be modified.
@@ -97,41 +98,49 @@
         const inmutableCoutry = Object.freeze(country);
     ```
 
-
+---
 - What does `Object.seal()` and `Object.freeze()` do? What are the differences?
 
     ``Object.freeze()`` don't let modified/create/delete properties in the selected object.
     ``Object.seal``  prevent from deletion of existing properties but they can be changed.
 See lessons6.1.1-OBJ.js
-
+---
 - What is the `ES6 Map`? What's the difference between this and a normal object?
 
-The ``Map`` is an object which contain key-value. This keys can be any type of JS Object (not as an Object that can only be Strings). To know the size it can be used the method ``size`` (A for-in in a JS Object).
-```javascript
-const weather = new Map([
-                    ['key', 'value'], 
-                    ['key', 'value']
-])
-```
-See lessons6.1.2-MAP.js
+    The ``Map`` is an object which contain key-value. This keys can be any type of JS Object (not as an Object that can only be Strings). To know the size it can be used the method ``size`` (A for-in in a JS Object).
+    ```javascript
+    const weather = new Map([
+                        ['key', 'value'], 
+                        ['key', 'value']
+    ])
+    ```
+    See lessons6.1.2-MAP.js
 
-
+---
 - What is a shallow copy and a deep copy in JS? Write a function called `deepClone` that does a deepCopy in JS. And write some tests to check that it works.
 
-A shallow copy of an object is a copy whose propertries share same reference. If the copy it's modified also it's modified the source object.
+    A shallow copy of an object is a copy whose propertries share same reference. If the copy it's modified also it's modified the source object. This happend on JS objects with two or more levels (an array inside another array / bidimensional array).
 
+    To prevent it, the solution is to create a deep copy, corverting the JS object to a JSON and then to an JS object:
+    ```javascript
+    const copy = JSON.parse(JSON.stringify(org));
+    ```
+
+---
 - How would you check that a property exists inside an object?
     There are two ways:
-    1. With ``in``
+    1. With ``in``:
     ```javascript
     name in country;                    //Return true or false
     ```
-    2. ``hasOwnPropetry`` method
+    2. ``hasOwnPropetry`` method:
     ```javascript
     country.hasOwnPropertry(name);      //Return true or false
     ```
-    
+---  
 - What is a Proxy in JS? When whould we use it?
+
+---
 - How would you extract all the property names of an object? And the values? What about both?
 - How do check that an object is an object in JS? How could you test that an object is and object AND not `null`? Why is this important to check?
 - How would you create a date in JS? What if I want to read it in US style, how would you transform the date into said format? And in milliseconds?
