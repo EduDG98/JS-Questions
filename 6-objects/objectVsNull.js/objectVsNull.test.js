@@ -42,6 +42,7 @@ describe('checkIsObject', () => {
     });
 });
 
+
 describe('checkIsObjectAndNotArray', () => {
     it('should return true because it is aJS Objecten but not an Array', () => {
         const obj = {};
