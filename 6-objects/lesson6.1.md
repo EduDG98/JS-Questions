@@ -119,7 +119,7 @@ See lessons6.1.1-OBJ.js
 ---
 - What is a shallow copy and a deep copy in JS? Write a function called `deepClone` that does a deepCopy in JS. And write some tests to check that it works.
 
-    A shallow copy of an object is a copy whose propertries share same reference. If the copy it's modified also it's modified the source object. This happend on JS objects with two or more levels (an array inside another array / bidimensional array).
+    A shallow copy of an object is a copy whose propertries share same reference. If the copy it's modified also it's modified at the source object. This happend on JS objects with two or more levels (an array inside another array / bidimensional array).
 
     To prevent it, the solution is to create a deep copy, corverting the JS object to a JSON and then to an JS object:
     ```javascript
@@ -140,8 +140,53 @@ See lessons6.1.1-OBJ.js
 ---  
 - What is a Proxy in JS? When whould we use it?
 
+    It's an object which let you create a proxy (act on behalf) of another object. The proxy object create an object that can be used instead of the original object but with redefine operations as ``get``, ``set`` and ``properties``.
+    They are used to log property accesses,validate, format or sanitize inputs (cybersegurity measure of cheking and filtering data inputs)
 ---
 - How would you extract all the property names of an object? And the values? What about both?
+    
+    To extrar property names:
+    ```javascript
+    Object.keys(objName);           //Return an array with the names
+    ```
+    To extract property values:
+    ```javascript
+    Object.values(objName);         //Return an array with the values
+    ```
+    To extract property values:
+    ```javascript
+    Object.entries(objName);        //Return an array with both
+    ```
+---
 - How do check that an object is an object in JS? How could you test that an object is and object AND not `null`? Why is this important to check?
+
+    To check if an value is an object:
+    ```javascript
+    function isObject1(item) {
+    return item instanceof Object;
+    }
+    ```
+    Or also:
+    ```javascript
+    function isObject2(val) {
+        return (typeof val === 'object');
+    }
+    ```
+
+    To check that an object is not ``undefined``:
+    ```javascript
+    typeof value === "object"
+    ```
+
+    To checl that an object is not ``null``:
+    ```javascript
+    value !== null
+    ```
+
+    To help, all of this can be in an arrow funcion as:
+    ```javascript
+    (value) => typeof value === "object" && value !== null;
+    ```
+---
 - How would you create a date in JS? What if I want to read it in US style, how would you transform the date into said format? And in milliseconds?
 - How would you check that two objects are the same in JS? Write some tests to prove that the function that you write works

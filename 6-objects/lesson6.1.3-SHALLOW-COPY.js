@@ -2,7 +2,7 @@ let origin = [['Acer', 'LG', 'Samsung']];
 let copy = [];
 
 
-const deepClone = (org, copy) => JSON.parse(JSON.stringify(org));
+export const deepClone = (org) => JSON.parse(JSON.stringify(org));
 
 
 const result = deepClone(origin, copy);

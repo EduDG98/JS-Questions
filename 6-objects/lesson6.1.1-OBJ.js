@@ -37,3 +37,27 @@ console.log(newCitizen);
 //The variables name have to be changed because the other one are caught (Line 17).
 const { name: firstName, address: { street: newStreet, zip } } = newCitizen;
 console.log(`${firstName} has moved to ${newStreet} with zip: ${zip}.`);
+
+//Extract property names
+const allCitizenProp = Object.keys(newCitizen);
+console.log(allCitizenProp);
+
+//Extract porperty values
+const citizenPropValues = Object.values(newCitizen);
+console.log(citizenPropValues);
+
+//Extract property names and values
+const citizenPropsAndValues = Object.entries(newCitizen)
+console.log(citizenPropsAndValues);
+
+
+//To know if a object is a object
+function isObject1(item) {
+    return item instanceof Object;
+}
+function isObject2(val) {
+    return (typeof val === 'object');
+}
+
+console.log(isObject2(newCitizen));
+console.log(isObject1(newCitizen))
