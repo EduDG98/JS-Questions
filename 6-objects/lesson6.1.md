@@ -187,6 +187,37 @@ See lessons6.1.1-OBJ.js
     ```javascript
     (value) => typeof value === "object" && value !== null;
     ```
+
+    Check objectVsNull folder
 ---
 - How would you create a date in JS? What if I want to read it in US style, how would you transform the date into said format? And in milliseconds?
+
+    ```javascript
+    new Date(year, monthIndex, day, hours, minutes, seconds, milliseconds)
+    ```
+    In US format:
+    ```javascript
+    new Date("MM/DD/YYYY")
+    ```
+---
 - How would you check that two objects are the same in JS? Write some tests to prove that the function that you write works
+
+```javascript
+const checkObjectAreIdentical = (objectOne, objectTwo) => {
+    const hasValues = [];
+    for (const property in objectOne) {
+        if (objectOne.hasOwnProperty(property)) {
+            if (typeof objectOne[property] === 'object' && typeof objectTwo[property] === 'object') {
+                // if values are an object
+                return checkObjectAreIdentical(objectOne[property], objectTwo[property]);
+            } else if (objectOne[property] == objectTwo[property]) {
+                // if values are NOT an object
+                hasValues.push(true);
+            } else { //if keys are not identical
+                hasValues.push(false);
+            }
+        }
+    }
+    return hasValues.every(element => !!element);
+}
+```
