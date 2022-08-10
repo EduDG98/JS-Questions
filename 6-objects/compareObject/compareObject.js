@@ -1,13 +1,17 @@
-const pet1 = { type: 'turtle', name: 'Pet' };
-const pet2 = { type: 'turtle', name: 'Pet' };
-const pet3 = { type: 'bird', name: 'Rob' };
-
-const checkObjectAreEqual = (objecToCompare1, objecToCompare2) => {
-    const ArrayObject1 = Object.entries(objecToCompare1).flat();
-    const ArrayObject2 = Object.entries(objecToCompare2).flat();
-    return ArrayObject1;
-
+export const checkObjectAreIdentical = (objectOne, objectTwo) => {
+    const hasValues = [];
+    for (const property in objectOne) {
+        if (objectOne.hasOwnProperty(property)) {
+            if (typeof objectOne[property] === 'object' && typeof objectTwo[property] === 'object') {
+                // if values are an object
+                return checkObjectAreIdentical(objectOne[property], objectTwo[property]);
+            } else if (objectOne[property] == objectTwo[property]) {
+                // if values are NOT an object
+                hasValues.push(true);
+            } else { //if keys are not identical
+                hasValues.push(false);
+            }
+        }
+    }
+    return hasValues.every(element => !!element);
 }
-
-const result = checkObjectAreEqual(pet1, pet2);
-console.log(result);
