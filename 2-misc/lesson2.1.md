@@ -23,7 +23,7 @@ Scope in JS is the context of code which determinate the variables accessibility
 ---
 - Explain "this" with examples
 
-.this it's a key word which refers to an object.
+.this it's a key word which refers to an object that is executing the current piece of code
 
 In a method, it refers to the method obj.
 ```javascript
